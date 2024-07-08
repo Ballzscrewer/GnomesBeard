@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cbfd7b5d80c93ce489fc5198fb9b145c
+guid: b6379d3beb1402a47b52f6e726b41fda
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Fortuna Gothic FlorishC
+  - MilleniGem
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
