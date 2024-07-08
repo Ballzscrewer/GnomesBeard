@@ -29,6 +29,8 @@ public class PlayerController : MonoBehaviour
 
     private Vector2 _input = new Vector2();
 
+    private Vector2 _directionVector = new Vector2(0, 0);
+
     private void GroundCheck()
     {
         _isGrounded = false;
@@ -81,11 +83,15 @@ public class PlayerController : MonoBehaviour
         Vector2 buttonsInput = Vector2.ClampMagnitude(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")), 1f);
 
         //определение вектора движения относительсно камеры
-        Vector2 directionVector = new Vector2(
+        if (!_pkmState)
+        {
+                _directionVector = new Vector2(
                 transform.position.x - _camera.transform.position.x,
                 transform.position.z - _camera.transform.position.z
                 );
-        float angle = Vector2.SignedAngle(Vector2.up, directionVector);
+        }
+                
+        float angle = Vector2.SignedAngle(Vector2.up, _directionVector);
         _input = Quaternion.Euler(0, 0, angle) * buttonsInput;
 
         //кем то используется не удалять
